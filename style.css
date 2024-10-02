@@ -1,0 +1,125 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffd1dc;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px) scale(1.5); /* Thêm scale để phóng to */
+  transform-origin: center; /* Giữ điểm giữa của card làm điểm gốc */
+  transition: 1s;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg) scale(1.5); /* Đảm bảo hover cũng phóng to */
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .happy {
+  visibility: hidden;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    30px 0 50px rgba(0, 0, 0, 0.4);
+  transition: 0.6s;
+}
+
+.happy {
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  margin: 30px;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  transition: 0.1s;
+}
+
+.flowers {
+  position: absolute;
+}
+
+.flowerOne,
+.flowerTwo,
+.flowerThree,
+.flowerFour {
+  position: absolute;
+  width: 85px; /* Kích thước hoa hồng */
+  height: 95px;
+}
+
+.flowerOne {
+  left: -10px;
+  top: 50px;
+}
+
+.flowerTwo {
+  left: 50px;
+  top: 20px;
+}
+
+.flowerThree {
+  left: 110px;
+  top: 50px;
+}
+
+.flowerFour {
+  left: 170px;
+  top: 20px;
+}
+
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-family: "Brush Script MT", cursive;
+  margin: 10px;
+  color: #333;
+}
+
+.name {
+  position: absolute;
+  left: 150px;
+  top: 200px;
+  color: #333;
+}
+
+.back {
+  font-family: Tahoma, sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 15px;
+  outline-color: #333;
+  outline-style: dotted;
+}
+
+.center-image {
+  display: block; /* Đảm bảo thẻ img là block-level để margin auto hoạt động */
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; /* Thay đổi kích thước hình ảnh tùy ý */
+}
